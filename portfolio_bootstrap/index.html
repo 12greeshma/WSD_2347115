@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style-switcher.css">
+    <style>
+    h3 span
+    {
+        
+        text-shadow: 1px 1px 2px black,0 0 25px blue,0 0 5px darkblue;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- MAIN CONTANIER -->
+    <div class="main-container">
+        <!-- ASIDE START -->
+        <div class="aside">
+            <div class="logo">
+                <a href="#"><span>P</span>ortfolio</a>
+            </div>
+            <div class="nav-toggler">
+                <span></span>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html" class="active"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="index.html"><i class="fa fa-user"></i> About</a></li>
+                <li><a href="photogallary.html"><i class="fa fa-image"></i>photogallery</a></li>
+                <li><a href="skills.html"><i class="fa fa-list"></i> Eduction & Skills</a></li>
+                <li><a href="projects&certificates.html"><i class="fa fa-briefcase"></i>Certificates & Projects</a></li>
+                <li><a href="details.html"><i class="fa fa-comments"></i> Contact me</a></li>
+            </ul>
+        </div>
+        <!-- ASIDE END -->
+        <!-- MAIN CONTENT START -->
+        <div class="main-content">
+            <!-- HOME SECTION -->
+            
+
+            <section class="home section " id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info padd-15">
+                            
+                            <h3 class="hello">My name is <span class="name">Edupunoor Chitrala Greeshma</span></h3>
+                            <h3 class="my-profession">I'm a <span class="typing">Data Analyst</span></h3>
+                            <h3>Hi! I'm, MCA Student in Christ Deemed to be University.</h3>
+                            <p>I'm passionate to work as Data Analysts which allow me to
+                                apply my analytics skills, technical skills and able me to be
+                                at the forefront of leveraging data-driven to solve real-world challenges.</p>
+
+                            <a href="#contact" class="btn hire-me">Hire me</a>
+                        </div>
+                        <div class="home-img padd-15">
+                            <img src="profilepic.jpg" alt="">
+                        </div>
+
+                    </div>
+
+
+
+                     <!-- Carousel Section -->
+            <div class="carousel-container padd-15">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <!-- Add more indicators as needed -->
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="img3.jpg" alt="Slide 1">
+                        </div>
+                        <!-- Add more carousel items as needed -->
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+                </div>
+            </section>
+            <!-- Carousel Section -->
+
+            <!-- HOME SECTION END -->
+            <!-- About section start -->
+
+            <!-- About section ends -->
+            <!-- contact me end -->
+        </div>
+        <!-- MAIN CONTENT END -->
+    </div>
+    <!-- MAIN CONTAINER END -->
+    <!-- JS FILES -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"
+        referrerpolicy="no-referrer"></script>"
+
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- <script>
+        function sendEmail()
+        {
+            Email.send({
+    Host : "smpt.gamil.com",
+    Username : "greeshma1203@gmail.com",
+    Password : "Greeshma@2002",
+    To : 'greeshmachitrala@gmail.com',
+    From :document.getElementById("email") ,
+    Subject : "new contact form enquriy",
+    Body : "and this is the body"
+ }).then(
+  message => alert(message)
+ );
+    }
+   </script> -->
+    <script src="script.js"></script>
+</body>
+
+
+</html>
