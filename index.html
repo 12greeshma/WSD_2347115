@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bing Maps Geolocation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Geolocation</h1>
+    </div>
+    <div id="mapContainer"></div>
+    <canvas id = "myCanvas" width="1000" height="250" style="border:2px solid #000000"></canvas>
+    <button id="getLocationButton">Get my location</button>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        function initMap() 
+        {
+            
+
+            var map = new Microsoft.Maps.Map(document.getElementById('mapContainer'), 
+            {
+                credentials: 'Am5IUymeOlCYrAt7UpmOsiEXvgoytaSgxBXh_AnpWS4UYoBqVkIbuPN3iJ2kVilD', 
+                center: new Microsoft.Maps.Location(0, 0), 
+                zoom: 10 
+                 
+            });
+
+            if (navigator.geolocation) 
+            {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var loc = new Microsoft.Maps.Location(position.coords.latitude, position.coords.longitude);
+
+                    
+                    map.setView({ center: loc, zoom: 12 });
+
+                    
+                    var pin = new Microsoft.Maps.Pushpin(loc);
+                    map.entities.push(pin);
+
+                    // CANVAS 
+                    var pixel = map.tryLocationToPixel(loc, Microsoft.Maps.PixelReference.control);
+                    context.clearRect(0, 0, canvas.width, canvas.height); 
+                    context.beginPath();
+                    context.arc(pixel.x, pixel.y, 10, 0, 2 * Math.PI);
+                    context.fillStyle = 'red';
+                    context.fill();
+
+
+                    // Display latitude and longitude on canvas
+                    context.font = '14px Arial';
+                    context.fillStyle = 'black';
+                    context.fillText('Latitude: ' + loc.latitude.toFixed(6), pixel.x + 15, pixel.y - 10);
+                    context.fillText('Longitude: ' + loc.longitude.toFixed(6), pixel.x + 15, pixel.y + 15);
+                }, 
+                function(error) 
+                {
+                    console.error('Error getting geolocation:', error);
+                });
+            } 
+            else 
+            {
+                console.error('Geolocation is not supported by this browser.');
+            }
+        }
+
+        document.getElementById('getLocationButton').addEventListener('click',function()
+        {
+            initMap();
+        });
+    </script>
+    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=YOUR_BING_MAPS_API_KEY&callback=initMap" async defer></script>
+  
+</body>
+</html>
