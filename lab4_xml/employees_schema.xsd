@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="employees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="employee">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="personal_information">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="First_name" type="xs:string" />
+                    <xs:element name="Last_name" type="xs:string" />
+                    <xs:element name="Date_of_Birth" type="xs:string" />
+                    <xs:element name="Gender" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Employment_information">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="position" type="xs:string" />
+                    <xs:element minOccurs="0" name="Position" type="xs:string" />
+                    <xs:element name="Salary" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Contact_information">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Email" type="xs:string" />
+                    <xs:element name="Phone_number" type="xs:unsignedLong" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

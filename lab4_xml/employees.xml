@@ -1,0 +1,83 @@
+<?xml version ="1.0"  encoding="UTF-8"?>
+<employees>
+	<employee>
+		<personal_information>
+			<First_name> Kalyan </First_name>
+			<Last_name>  Verma  </Last_name>
+			<Date_of_Birth> 1990-11-23 </Date_of_Birth>
+			<Gender> Male </Gender>
+		</personal_information>
+		<Employment_information>
+			<Position>Senior Web Developer </Position>
+			<Salary> 12LPA </Salary>
+		</Employment_information>
+		<Contact_information>
+			<Email>kiran1201@gmail.com </Email>
+			<Phone_number> 9856743251 </Phone_number>
+		</Contact_information>
+	</employee>
+	<employee>
+		<personal_information>
+			<First_name> Deepika </First_name>
+			<Last_name>  Setty  </Last_name>
+			<Date_of_Birth> 1995-05-2 </Date_of_Birth>
+			<Gender> Female </Gender>
+		</personal_information>
+		<Employment_information>
+			<position>Sap Consultant </position>
+			<Salary> 10LPA </Salary>
+		</Employment_information>
+		<Contact_information>
+			<Email>deepikasetty@gmail.com </Email>
+			<Phone_number> 8907654789 </Phone_number>
+		</Contact_information>
+	</employee>
+	<employee>
+		<personal_information>
+			<First_name> Lavanya </First_name>
+			<Last_name>  Yadav  </Last_name>
+			<Date_of_Birth> 1988-01-07 </Date_of_Birth>
+			<Gender> Female </Gender>
+		</personal_information>
+		<Employment_information>
+			<position>Senior Data Analyst </position>
+			<Salary> 16LPA </Salary>
+		</Employment_information>
+		<Contact_information>
+			<Email>lavanya0107@gmail.com </Email>
+			<Phone_number> 7890567489 </Phone_number>
+		</Contact_information>
+	</employee>
+	<employee>
+		<personal_information>
+			<First_name> Aditya </First_name>
+			<Last_name>  Sinha  </Last_name>
+			<Date_of_Birth> 1999-12-01 </Date_of_Birth>
+			<Gender> Male </Gender>
+		</personal_information>
+		<Employment_information>
+			<position> Manager </position>
+			<Salary> 8LPA </Salary>
+		</Employment_information>
+		<Contact_information>
+			<Email> aditya1212@gmail.com </Email>
+			<Phone_number> 9765890876 </Phone_number>
+		</Contact_information>
+	</employee>
+	<employee>
+		<personal_information>
+			<First_name> Kushi </First_name>
+			<Last_name>  Ranjan </Last_name>
+			<Date_of_Birth> 1997-07-24 </Date_of_Birth>
+			<Gender> Female </Gender>
+		</personal_information>
+		<Employment_information>
+			<position> UI/UX Developer </position>
+			<Salary> 11LPA </Salary>
+		</Employment_information>
+		<Contact_information>
+			<Email> kushi0405@gmail.com </Email>
+			<Phone_number> 8486831775 </Phone_number>
+		</Contact_information>
+	</employee>
+</employees>
