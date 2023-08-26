@@ -1,0 +1,33 @@
+<!-- Write a JavaScript exercise to get the filename extension. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Extension Extractor</title>
+</head>
+<body>
+    <h1>File Extension Extractor</h1>
+    <label for="filename">Enter a filename:</label>
+    <input type="text" id="filenameInput">
+    <button onclick="extractExtension()">Extract Extension</button>
+    <p id="extensionDisplay"></p>
+
+    <script>
+        function extractExtension() 
+        {
+            const filename = document.getElementById('filenameInput').value;
+            const extensionDisplay = document.getElementById('extensionDisplay');
+
+            const dotIndex = filename.lastIndexOf('.');
+            if (dotIndex !== -1) 
+            {
+                const extension = filename.substring(dotIndex + 1);
+                extensionDisplay.textContent = `File extension: ${extension}`;
+            } else 
+            {
+                extensionDisplay.textContent = 'No file extension found.';
+            }
+        }
+    </script>
+</body>
+</html>
