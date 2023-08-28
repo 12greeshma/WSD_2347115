@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="employees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="employee">
+          <xs:complexType>
+            <xs:sequence>
+            <xs:element name="employee_id" type="xs:integer" />
+              <xs:element name="personal_information">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="First_name" type="xs:string" />
+                    <xs:element name="Last_name" type="xs:string" />
+                    <xs:element name="Date_of_Birth" type="xs:date" />
+                    <xs:element name="Gender">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="Male" />
+                          <xs:enumeration value="Female" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Employment_information">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Position" type="xs:string" />
+                    <xs:element name="Salary" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Contact_information">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Email">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Phone_number">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="\d{10}" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
