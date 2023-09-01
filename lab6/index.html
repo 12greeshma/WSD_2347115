@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        h1 
+        {
+            text-align: center;
+            color: darkblue;
+        }
+        .error 
+        {
+            color: red;
+            font-size: 0.8rem;
+        }
+
+        .valid 
+        {
+            color: green;
+        }
+
+        .invalid 
+        {
+            color: red;
+        }
+
+        form 
+        {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            font-size: larger;
+            background-color: pink;
+          
+        }
+
+        div
+         {
+            margin-bottom: 30px;
+        }
+
+        label 
+        {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .status-icon 
+        {
+            margin-left: 5px;
+        }
+
+        button[type="submit"] 
+        {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:disabled 
+        {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form id="registrationForm">
+        
+        <div>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required pattern="[A-Za-z ]{3,}">
+            <small id="fullNameError" class="error"></small>
+        </div>
+
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <small id="emailError" class="error"></small>
+        </div>
+
+       
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="8">
+            <small id="passwordError" class="error"></small>
+        </div>
+
+       
+        <div>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <small id="confirmPasswordError" class="error"></small>
+        </div>
+
+       
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <small id="dobError" class="error"></small>
+        </div>
+
+        
+        <div>
+            <button type="submit" id="submitButton" disabled>Register</button>
+        </div>
+    </form>
+
+    <script>
+        const fullNameInput = document.getElementById('fullName');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const dobInput = document.getElementById('dob');
+        const submitButton = document.getElementById('submitButton');
+
+        fullNameInput.addEventListener('input', validateFullName);
+        emailInput.addEventListener('input', validateEmail);
+        passwordInput.addEventListener('input', validatePassword);
+        confirmPasswordInput.addEventListener('input', validatePasswordMatch);
+        dobInput.addEventListener('input', validateDOB);
+
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            alert('Form submitted successfully');
+        });
+
+        function validateFullName() {
+            const fullName = fullNameInput.value.trim();
+            const fullNameError = document.getElementById('fullNameError');
+            if (fullName.length < 3 || !/^[A-Za-z ]+$/.test(fullName)) 
+            {
+                fullNameInput.classList.remove('valid');
+                fullNameInput.classList.add('invalid');
+                fullNameError.textContent = '❌Full Name is required (min. 3 characters)';
+            } else 
+            {
+                fullNameInput.classList.remove('invalid');
+                fullNameInput.classList.add('valid');
+                fullNameError.textContent = '';
+            }
+            validateForm();
+        }
+
+        function validateEmail() 
+        {
+            const email = emailInput.value.trim();
+            const emailError = document.getElementById('emailError');
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) 
+            {
+                emailInput.classList.remove('valid');
+                emailInput.classList.add('invalid');
+                emailError.textContent = '❌Enter a valid email address';
+            } else 
+            {
+                emailInput.classList.remove('invalid');
+                emailInput.classList.add('valid');
+                emailError.textContent = '';
+            }
+            validateForm();
+        }
+
+        function validatePassword()
+         {
+            const password = passwordInput.value;
+            const passwordError = document.getElementById('passwordError');
+            if (password.length < 8 || !/^(?=.*[A-Za-z])(?=.*\d).+$/.test(password)) 
+            {
+                passwordInput.classList.remove('valid');
+                passwordInput.classList.add('invalid');
+                passwordError.textContent = '❌Password must be at least 8 characters and contain letters and numbers';
+            } else
+             {
+                passwordInput.classList.remove('invalid');
+                passwordInput.classList.add('valid');
+                passwordError.textContent = '';
+            }
+            validateForm();
+        }
+
+        function validatePasswordMatch() 
+        {
+            const confirmPassword = confirmPasswordInput.value;
+            const password = passwordInput.value;
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (confirmPassword !== password) {
+                confirmPasswordInput.classList.remove('valid');
+                confirmPasswordInput.classList.add('invalid');
+                confirmPasswordError.textContent = 'Passwords do not match';
+            } else {
+                confirmPasswordInput.classList.remove('invalid');
+                confirmPasswordInput.classList.add('valid');
+                confirmPasswordError.textContent = '';
+            }
+            validateForm();
+        }
+
+        function validateDOB()
+         {
+            const dob = new Date(dobInput.value);
+            const dobError = document.getElementById('dobError');
+            if (isNaN(dob.getTime())) 
+            {
+                dobInput.classList.remove('valid');
+                dobInput.classList.add('invalid');
+                dobError.textContent = 'Enter a valid date in YYYY-MM-DD format';
+            } else 
+            {
+                const today = new Date();
+                const age = today.getFullYear() - dob.getFullYear();
+                if (age < 18) 
+                {
+                    dobInput.classList.remove('valid');
+                    dobInput.classList.add('invalid');
+                    dobError.textContent = 'You must be at least 18 years old';
+                } else 
+                {
+                    dobInput.classList.remove('invalid');
+                    dobInput.classList.add('valid');
+                    dobError.textContent = '';
+                }
+            }
+            validateForm();
+        }
+        
+
+        function validateForm() 
+        {
+            if (
+                fullNameInput.classList.contains('valid') &&
+                emailInput.classList.contains('valid') &&
+                passwordInput.classList.contains('valid') &&
+                confirmPasswordInput.classList.contains('valid') &&
+                dobInput.classList.contains('valid')
+            ) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
