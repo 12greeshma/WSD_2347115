@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 
+        {
+            text-align: center;
+            color: brown;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        #fetchBooks 
+        {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border: 5px solid lightcoral;
+            border-radius: 6px;
+
+        }
+
+        #fetchBooks:hover 
+        {
+            background-color: green;
+        }
+
+        #bookList 
+        {
+            margin-top: 20px;
+            text-align: center;
+
+        }
+
+        ul 
+        {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li 
+        {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .book-box 
+        {
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f0f0f0;
+           
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Fetching Books</h1>
+    <div id="bookList">
+        <button id="fetchBooks">Fetch Books</button>
+    </div>
+    <div id="results">
+        <!-- Book details will be inserted here dynamically -->
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
