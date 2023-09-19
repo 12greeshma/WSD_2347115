@@ -1,0 +1,56 @@
+[
+    {
+       "Breed" : "Golden Retriever",
+      "Color" : "Golden" ,
+      "Country" : "United States"
+    },
+    {
+   "Breed" : "German Shepherd" ,
+"Color": "Black and Tan",
+"Country" : "Germany"
+    },
+    {
+ "Breed" : "Poodle"  ,
+"Color" : "White",
+" Country": "France"
+    },
+    {
+ "Breed" : "Bulldog",
+" Color" : "Brindle",
+ "Country": "United Kingdom"
+    },
+    {
+ "Breed": "Labrador Retriever" ,
+"Color": "Yellow",
+ "Country": "Canada"
+    },
+
+    {
+      "Breed": "Labrador Retriever" ,
+"Color": "Yellow",
+ "Country": "Canada"
+
+    },
+    {
+      "Breed": "Labrador Retriever" ,
+"Color": "Yellow",
+ "Country": "Canada"
+    },
+    {
+      "Breed": "Labrador Retriever" ,
+"Color": "Yellow",
+ "Country": "Canada"
+    },
+    {
+      "Breed": "Labrador Retriever" ,
+"Color": "Yellow",
+ "Country": "Canada"
+    },
+    {
+      "Breed": "Labrador Retriever" ,
+"Color": "Yellow",
+ "Country": "Canada"
+    }
+
+
+]

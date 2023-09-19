@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed back form</title>
+    <style>
+        h1 
+        {
+            text-align: center;
+            color:black;
+        }
+        .error 
+        {
+            color: red;
+            font-size: 0.8rem;
+        }
+
+        .valid 
+        {
+            color: green;
+        }
+
+        .invalid 
+        {
+            color: red;
+        }
+
+        form 
+        {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            font-size: larger;
+            background-color: white;
+          
+        }
+
+        div
+         {
+            margin-bottom: 30px;
+        }
+
+        label 
+        {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="textarea"]
+         {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .status-icon 
+        {
+            margin-left: 5px;
+        }
+
+        button[type="submit"] 
+        {
+            width: 30%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:disabled 
+        {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Leave a Comment</h1>
+    <form id="feedbackForm">
+        
+        <div>
+            <label for="fullName">Name</label>
+            <input type="text" id="fullName" name="fullName" required pattern="[A-Za-z ]{5,}">
+            <small id="fullNameError" class="error"></small>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <small id="emailError" class="error"></small>
+        </div>
+
+       
+        <div>
+            <label for="comment">Comment</label>
+            <textarea name="comment"></textarea>
+           
+        </div>
+
+        
+        <div>
+            <button type="submit" id="submitButton" disabled>Submit</button>
+        </div>
+    </form>
+
+    <script>
+        const fullNameInput = document.getElementById('fullName');
+        const emailInput = document.getElementById('email');
+        
+        fullNameInput.addEventListener('input', validateFullName);
+        emailInput.addEventListener('input', validateEmail);
+       
+        
+
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) 
+        {
+            event.preventDefault();
+            
+            alert('Feed back form submitted successfully');
+        });
+
+        function validateFullName() {
+            const fullName = fullNameInput.value.trim();
+            const fullNameError = document.getElementById('fullNameError');
+            if (fullName.length < 5 || !/^[A-Za-z ]+$/.test(fullName)) 
+            {
+                fullNameInput.classList.remove('valid');
+                fullNameInput.classList.add('invalid');
+                fullNameError.textContent = '❌Full Name is required (min 5 characters)';
+            } 
+            else 
+            {
+                fullNameInput.classList.remove('invalid');
+                fullNameInput.classList.add('valid');
+                fullNameError.textContent = '';
+            }
+            validateForm();
+        }
+
+        function validateEmail() 
+        {
+            const email = emailInput.value.trim();
+            const emailError = document.getElementById('emailError');
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) 
+            {
+                emailInput.classList.remove('valid');
+                emailInput.classList.add('invalid');
+                emailError.textContent = '❌Enter a valid email address';
+            } else 
+            {
+                emailInput.classList.remove('invalid');
+                emailInput.classList.add('valid');
+                emailError.textContent = '';
+            }
+            validateForm();
+        }
+        function validateForm() 
+        {
+            if (
+                fullNameInput.classList.contains('valid') &&
+                emailInput.classList.contains('valid') 
+                
+            ) 
+            {
+                submitButton.disabled = false;
+            } 
+            else 
+            {
+                submitButton.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

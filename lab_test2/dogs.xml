@@ -1,0 +1,53 @@
+<?xml version ="1.0"  encoding="UTF-8"?>
+<Canine>
+    <Breed1>
+        <breed>Golden Retriever</breed>
+        <color>Golden</color>
+        <country>United States </country>
+    </Breed1>
+    <Breed2>
+        <breed>German Shepherd</breed>
+        <color>Black and Tan</color>
+        <country>Germany</country>
+    </Breed2>
+    <Breed3>
+        <breed>Poodle</breed>
+        <color>White</color>
+        <country>France</country>
+    </Breed3>
+    <Breed4>
+        <breed>Bulldog</breed>
+        <color>Brindle</color>
+        <country>United Kingdom</country>
+    </Breed4>
+    <Breed5>
+        <breed>Labrador Retriever</breed>
+        <color>Yellow</color>
+        <country>Canada</country>
+    </Breed5>
+    <Breed6>
+        <breed>Boxer</breed>
+        <color>Fawn</color>
+        <country>Germany</country>
+    </Breed6>
+    <Breed7>
+        <breed>Beagle</breed>
+        <color>Tri-color</color>
+        <country>United Kingdom</country>
+    </Breed7>
+    <Breed8>
+        <breed>Dachshund Pinscher</breed>
+        <color>Red</color>
+        <country>Germany</country>
+    </Breed8>
+    <Breed9>
+        <breed>Boberman Pinscher</breed>
+        <color>Black and Tan</color>
+        <country>Germany</country>
+    </Breed9>
+    <Breed10>
+        <breed>Tottweiler</breed>
+        <color>Black and Tan</color>
+        <country>Germany</country>
+    </Breed10>
+</Canine>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canine data</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 
+        {
+            text-align: center;
+            color: brown;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        #fetchdata
+        {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border: 5px solid lightcoral;
+            border-radius: 6px;
+
+        }
+
+        #fetchdata:hover 
+        {
+            background-color: green;
+        }
+
+        #dogdata
+        {
+            margin-top: 20px;
+            text-align: center;
+
+        }
+
+        ul 
+        {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li 
+        {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .dog-box 
+        {
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f0f0f0;
+           
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dogs Information</h1>
+    <div id="dogdata">
+        <button id="fetchdata">Click for info</button>
+    </div>
+    <div id="results">
+       
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

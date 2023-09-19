@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Rnadom Image</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 
+        {
+            text-align: center;
+            color: olive;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        #fetchdata
+        {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border: 5px solid yellow;
+            border-radius: 6px;
+
+        }
+
+        #fetchdata:hover 
+        {
+            background-color: darkorchid;
+        }
+
+        #dogdata
+        {
+            margin-top: 20px;
+            text-align: center;
+
+        }
+
+        ul 
+        {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li 
+        {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .dog-box 
+        {
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f0f0f0;
+           
+        }
+        .dogimg
+        {
+            border-radius: solid 2px red;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Rnadom Dog Images</h1>
+    <div id="dogdata">
+        <img class="dogimg" src="dog1.jpeg" alt="First slide"><br>
+        <button id="fetchdata">Fetch Random Dog Image</button>
+    </div>
+    
+    <div id="results">
+       
+    </div>
+
+   
+
+
+    <script src="dog_api.js"></script>
+</body>
+
+</html>
